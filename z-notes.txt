@@ -1,0 +1,9 @@
+The start:prod script will be used in production. It simply navigates to the server directory and runs the server's npm start command. This is good, because in production we can only run one server!
+
+We'll use the start:dev script as we continue to build this application. We use concurrently to run two separate commands, each one wrapped in its own quotation marks. Note the escape characters around the scripts' quotes \". JSON requires double quotes, and to use double quotes within a string, we need to use the backslash \ escape character before it.
+
+The script will run the npm run watch script in the server directory and the npm start script in the client directory, allowing us to use both servers at the same time from a single command-line window.
+
+The install script is interesting, as it's already a built-in script that works well. But with this one, we can use npm i or npm install to first install all of the dependencies at this root level. Then it navigates to the server directory and installs those dependencies. Lastly, it navigates to the client directory to install those dependencies as well.
+
+Last, we have the seed script, which will navigate to the server directory and seed the database using the npm run seed command. This will be useful if we ever want to seed the database in a production environment, which we'll touch on later.
