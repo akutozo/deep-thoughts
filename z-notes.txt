@@ -7,3 +7,16 @@ The script will run the npm run watch script in the server directory and the npm
 The install script is interesting, as it's already a built-in script that works well. But with this one, we can use npm i or npm install to first install all of the dependencies at this root level. Then it navigates to the server directory and installs those dependencies. Lastly, it navigates to the client directory to install those dependencies as well.
 
 Last, we have the seed script, which will navigate to the server directory and seed the database using the npm run seed command. This will be useful if we ever want to seed the database in a production environment, which we'll touch on later.
+
+_________________________________
+
+In the client folder, run the following command:
+
+npm install react-router-dom
+Note that there is a separate react-router package, which represents the core React Router library. For web-based projects, however, react-router-dom has everything you need in it.
+
+IMPORTANT
+Sometimes when dealing with a lot of npm libraries that rely on related dependencies, you may receive some type of error on the command line or experience buggy behavior. This is usually resolved by removing both the node_modules directory and package-lock.json file from the directory and installing the dependencies again.
+
+_________________________________
+
