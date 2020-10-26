@@ -20,6 +20,15 @@ import Home from './pages/Home';
 
 // establish a new connection to the GraphQL server using Apollo
 const client = new ApolloClient({
+  request: operation => {
+    const token = localStorage.getItem('id_token');
+
+    operation.setContext({
+      headers: {
+        authorization: token ? `Bearer ${token}` : ''
+      }
+    });
+  },
   uri: '/graphql'
 });
 
